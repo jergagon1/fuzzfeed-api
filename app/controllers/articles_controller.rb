@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @comments = Comments.where(article_id: params[:id])
+    @comments = Comment.where(article_id: params[:id])
     render json: @article
   end
 
