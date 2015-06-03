@@ -12,6 +12,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    p params
+    headers['Access-Control-Allow-Origin'] = 'http://localhost:9393'
+
     @article = Article.new(params[:article_params])
     @article.user_id = current_user.id if current_user
     if @article.save
