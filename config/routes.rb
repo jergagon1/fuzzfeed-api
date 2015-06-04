@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  match 'api/v1/articles', to: 'articles#index', via: [:get]
-  match 'api/v1/articles/:id', to: 'articles#show', via: [:get]
-  match 'api/v1/articles', to: 'articles#create', via: [:post]
+  match 'api/v1/articles', to: 'articles#index', via: [:get, :options]
+  match 'api/v1/articles/:id', to: 'articles#show', via: [:get, :options]
+  match 'api/v1/articles', to: 'articles#create', via: [:post, :options]
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   # Example of regular route:
